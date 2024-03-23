@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pydantic import BaseModel, PositiveFloat, PositiveInt
+from pydantic import BaseModel, PositiveFloat, PositiveInt, EmailStr
 
 from enum import Enum
 
@@ -11,7 +11,7 @@ class CategoriaEnum(str, Enum):
 
 
 class Vendas(BaseModel):
-    email: str
+    email: EmailStr
     data: datetime
     valor: PositiveFloat
     produto: str

@@ -15,3 +15,9 @@ class ExcelValidadorUI:
 
     def upload_file(self):
         return st.file_uploader("Carregue seu arquivo Excel aqui", type=["xlsx"])
+
+    def display_results(self, result, errors):
+        if errors:
+            st.error(f"Erro na validação: {errors}")
+        else:
+            st.success("O schema do arquivo Excel está correto!")
