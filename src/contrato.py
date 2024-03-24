@@ -11,6 +11,9 @@ class CategoriaEnum(str, Enum):
 
 
 class Vendas(BaseModel):
+    """
+    Contrato formato dos dados
+    """
     email: EmailStr
     data: datetime
     valor: PositiveFloat

@@ -1,22 +1,22 @@
 import pandas as pd
 from contrato import Vendas
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import os
 
-# load_dotenv(".env")
+load_dotenv(".env")
 
-# # Lê as variáveis de ambiente
-# POSTGRES_USER = os.getenv('POSTGRES_USER')
-# POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
-# POSTGRES_HOST = os.getenv('POSTGRES_HOST')
-# POSTGRES_PORT = os.getenv('POSTGRES_PORT')
-# POSTGRES_DB = os.getenv('POSTGRES_DB')
+# Lê as variáveis de ambiente
+POSTGRES_USER = os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+POSTGRES_HOST = os.getenv('POSTGRES_HOST')
+POSTGRES_PORT = os.getenv('POSTGRES_PORT')
+POSTGRES_DB = os.getenv('POSTGRES_DB')
 
-# # Cria a URL de conexão com o banco de dados
-# DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
+# Cria a URL de conexão com o banco de dados
+DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
 
-# # Carrega as variáveis de ambiente
-# load_dotenv()
+# Carrega as variáveis de ambiente
+load_dotenv()
 
 def process_excel(uploaded_file):
     try:
@@ -35,7 +35,7 @@ def process_excel(uploaded_file):
                 erros.append(f"Erro na linha {index + 2}: {e}")
 
         # Retorna tanto o resultado da validação, os erros, quanto o DataFrame
-        return df, erros
+        return df, True, erros
 
     except Exception as e:
         # Se houver exceção, retorna o erro e um DataFrame vazio
