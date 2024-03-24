@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.9', '3.10', '3.11', '3.12']
+        python-versions: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
       - name: Baixar o repositorio (clone)
@@ -16,7 +16,7 @@ jobs:
       - name: Instalar o Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{python-version}}
+          python-versions: ${{python-versions}}
 
       - name: Instalar as libs
         run: pip install -r requirements.txt
