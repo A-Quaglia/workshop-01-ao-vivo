@@ -16,7 +16,7 @@ jobs:
       - name: Instalar o Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{matrix.version}}
+          python-version: ${{python-version}}
 
       - name: diretorio
         run: echo echo $(pwd)
