@@ -18,5 +18,8 @@ jobs:
         with:
           python-version: ${{python-version}}
 
-      - name: diretorio
-        run: echo echo $(pwd)
+      - name: Instalar as libs
+        run: pip install -r requirements.txt
+
+      - name: Rodar Tests
+        run: pytest tests/test_contrato.py
