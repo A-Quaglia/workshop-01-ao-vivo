@@ -1,0 +1,16 @@
+name: ci
+
+on: pull_requests
+jobs:
+  test: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: primeira CI
+        run: echo hello hello
+
+      - name: lista de arquivos
+        run: echo echo $(ls)
+
+      - name: diretorio
+        run: echo echo $(pwd)
